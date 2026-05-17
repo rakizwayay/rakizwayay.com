@@ -30,10 +30,17 @@
       text-decoration: none;
       color: #333;
       font-weight: bold;
+      border: none;       /* يلغي أي حدود */
+      outline: none;      /* يلغي أي إطار تركيز */
+      background: none;   /* يلغي أي خلفية */
+    }
+    nav a:focus, nav a:active {
+      outline: none;      /* يلغي الإطار عند الضغط */
+      border: none;
     }
     p {
-      border: none;        /* يلغي أي حدود */
-      background: none;    /* يلغي أي خلفية */
+      border: none;
+      background: none;
       margin: 20px auto;
       max-width: 600px;
       line-height: 1.8;
