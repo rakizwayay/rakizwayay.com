@@ -1,83 +1,9 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الصفحة الرئيسية | بودكاست ركز وياي</title>
-  <style>
-    body {
-      font-family: "Tahoma", sans-serif;
-      background-color: #f9f9f9;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #222;
-      color: #fff;
-      padding: 20px;
-    }
-    img {
-      max-width: 250px;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
-    nav {
-      margin: 20px 0;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      border: none;       /* يلغي أي حدود */
-      outline: none;      /* يلغي أي إطار تركيز */
-      background: none;   /* يلغي أي خلفية */
-    }
-    nav a:focus, nav a:active {
-      outline: none;      /* يلغي الإطار عند الضغط */
-      border: none;
-    }
-    p {
-      border: none;
-      background: none;
-      margin: 20px auto;
-      max-width: 600px;
-      line-height: 1.8;
-      color: #333;
-      font-size: 18px;
-    }
-    footer {
-      background-color: #222;
-      color: #fff;
-      padding: 10px;
-      margin-top: 30px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>🎙️ بودكاست ركز وياي</h1>
-    <p>إبراهيم أبو الليش</p>
-  </header>
+<!DOCTYPE html> <html lang="ar"> <head>   <meta charset="UTF-8">   <meta name="viewport" content="width=device-width, initial-scale=1.0">   <title>الصفحة الرئيسية | بودكاست ركز وياي</title>   <style>     body {       font-family: "Tahoma", sans-serif;       background-color: #f9f9f9;       text-align: center;       margin: 0;       padding: 0;       direction: rtl; /* لتنسيق اتجاه النصوص العربية بشكل صحيح */       -webkit-tap-highlight-color: transparent; /* يمنع ظهور مربع أزرق أو أسود عند اللمس بالتلفون */     }     header {       background-color: #222;       color: #fff;       padding: 20px;     }     header p {       color: #fff !important; /* لضمان بقاء اسمك باللون الأبيض داخل الهيدر */       margin: 5px 0 0 0;     }     img {       max-width: 250px;       margin-top: 20px;       border-radius: 10px;       border: none !important;     }     nav {       margin: 30px 0;       display: flex;       flex-wrap: wrap;       justify-content: center;       gap: 15px; /* توزيع المسافات بين الأزرار بالتساوي */     }     nav a {       text-decoration: none;       color: #333;       font-weight: bold;       padding: 5px 10px;       border: none !important;       /* يلغي أي حدود نهائياً */       outline: none !important;      /* يلغي أي إطار تركيز نهائياً */       background: transparent !important;   /* يلغي أي خلفية */       box-shadow: none !important;   /* يضمن عدم وجود أي ظلال تشبه المربع */     }     nav a:focus, nav a:active, nav a:hover {       outline: none !important;             border: none !important;       background: transparent !important;       color: #ff9800; /* يتغير لون النص للأصفر عند الضغط للتفاعل */     }     p {       border: none !important;       outline: none !important;       background: transparent !important;       box-shadow: none !important;       margin: 25px auto;       max-width: 600px;       line-height: 1.8;       color: #333;       font-size: 18px;       padding: 0 15px;     }     footer {       background-color: #222;       color: #fff;       padding: 10px;       margin-top: 40px;     }     footer p {       color: #fff !important;       margin: 0;     }   </style> </head> <body>   <header>     <h1>🎙️ بودكاست ركز وياي</h1>     <p>إبراهيم أبو الليش</p>   </header>
 
-  <!-- صورة الغلاف -->
   <img src="https://raw.githubusercontent.com/rakizwayay/rakizwayay.com/main/5DFD204C-8BC0-4A79-ACB3-0626A5610BD5.jpeg" alt="شعار بودكاست ركز وياي">
 
-  <!-- وصف قصير -->
   <p>بودكاست يسلط الضوء على خفايا العقل البشري والسلوكيات الاجتماعية بأسلوب بسيط ومباشر.</p>
 
-  <!-- روابط التنقل -->
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">شتريد تعرف عن ركز وياي</a>
-    <a href="contact.html">تواصل</a>
-    <a href="episodes.html">جميع الحلقات</a>
-    <a href="listen.html">الاستماع المباشر</a>
-  </nav>
+  <nav>     <a href="index.html">الرئيسية</a>     <a href="about.html">شتريد تعرف عن ركز وياي</a>     <a href="contact.html">تواصل</a>     <a href="episodes.html">جميع الحلقات</a>     <a href="listen.html">الاستماع المباشر</a>   </nav>
 
-  <footer>
-    <p>© 2026 بودكاست ركز وياي | إبراهيم أبو الليش</p>
-  </footer>
-</body>
-</html>
+  <footer>     <p>© 2026 بودكاست ركز وياي | إبراهيم أبو الليش</p>   </footer> </body> </html>
