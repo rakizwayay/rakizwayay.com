@@ -33,18 +33,12 @@
       outline: none;
       border: none;
     }
-    a.playlist {
-      display: inline-block;
-      margin: 20px;
-      padding: 15px 25px;
-      background-color: #0066cc;
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 8px;
-    }
-    a.playlist:hover {
-      background-color: #004999;
+    iframe {
+      width: 80%;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+      margin: 20px auto;
     }
     footer {
       background-color: #222;
@@ -57,13 +51,14 @@
 <body>
   <header>
     <h1>🎬 مقاطع البودكاست القصيرة</h1>
-    <p>شاهد واستمع إلى المقاطع السريعة من بودكاست ركز وياي</p>
+    <p>شاهد واستمع إلى المقاطع السريعة من بودكاست ركز وياي مباشرة هنا</p>
   </header>
 
-  <!-- رابط قائمة التشغيل -->
-  <a class="playlist" href="https://youtube.com/playlist?list=PLRMU50WYjkBpf_sc5sjyxZQZLY5LwOW5k&si=sMwNgDNW_vQoDcPF" target="_blank">
-    ▶️ مشاهدة قائمة المقاطع على YouTube
-  </a>
+  <!-- تشغيل قائمة التشغيل داخل الموقع -->
+  <iframe src="https://www.youtube.com/embed/videoseries?list=PLRMU50WYjkBpf_sc5sjyxZQZLY5LwOW5k"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allowfullscreen>
+  </iframe>
 
   <!-- روابط التنقل -->
   <nav>
