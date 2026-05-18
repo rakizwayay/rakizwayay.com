@@ -17,6 +17,26 @@
       color: #fff;
       padding: 20px;
     }
+    iframe {
+      width: 80%;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+      margin: 20px auto;
+    }
+    .controls button {
+      margin: 5px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #0066cc;
+      color: #fff;
+      cursor: pointer;
+    }
+    .controls button:hover {
+      background-color: #004999;
+    }
     nav {
       margin: 20px 0;
     }
@@ -25,20 +45,6 @@
       text-decoration: none;
       color: #333;
       font-weight: bold;
-      border: none;
-      outline: none;
-      background: none;
-    }
-    nav a:focus, nav a:active {
-      outline: none;
-      border: none;
-    }
-    iframe {
-      width: 80%;
-      height: 450px;
-      border: none;
-      border-radius: 10px;
-      margin: 20px auto;
     }
     footer {
       background-color: #222;
@@ -54,11 +60,16 @@
     <p>شاهد واستمع إلى المقاطع السريعة من بودكاست ركز وياي مباشرة هنا</p>
   </header>
 
-  <!-- تشغيل قائمة التشغيل داخل الموقع -->
-  <iframe src="https://www.youtube.com/embed/videoseries?list=PLRMU50WYjkBpf_sc5sjyxZQZLY5LwOW5k"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-          allowfullscreen>
-  </iframe>
+  <!-- مشغل قائمة التشغيل -->
+  <div id="player"></div>
+
+  <!-- أزرار التحكم -->
+  <div class="controls">
+    <button onclick="prevVideo()">⏮️ الفيديو السابق</button>
+    <button onclick="rewind()">⏪ ترجيع 10 ثواني</button>
+    <button onclick="forward()">⏩ تقديم 10 ثواني</button>
+    <button onclick="togglePlay()">⏯️ تشغيل/إيقاف مؤقت</button>
+  </div>
 
   <!-- روابط التنقل -->
   <nav>
@@ -72,5 +83,39 @@
   <footer>
     <p>© 2026 بودكاست ركز وياي | إبراهيم أبو الليش</p>
   </footer>
+
+  <!-- YouTube API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '450',
+        width: '80%',
+        playerVars: {
+          listType: 'playlist',
+          list: 'PLRMU50WYjkBpf_sc5sjyxZQZLY5LwOW5k'
+        }
+      });
+    }
+    function prevVideo() {
+      player.previousVideo();
+    }
+    function rewind() {
+      var currentTime = player.getCurrentTime();
+      player.seekTo(currentTime - 10, true);
+    }
+    function forward() {
+      var currentTime = player.getCurrentTime();
+      player.seekTo(currentTime + 10, true);
+    }
+    function togglePlay() {
+      if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+        player.pauseVideo();
+      } else {
+        player.playVideo();
+      }
+    }
+  </script>
 </body>
 </html>
