@@ -39,6 +39,32 @@
     .contact-links a:hover {
       background-color: #004999;
     }
+    form {
+      margin: 20px auto;
+      max-width: 400px;
+      text-align: left;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0066cc;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #004999;
+    }
     footer {
       background-color: #222;
       color: #fff;
@@ -57,8 +83,21 @@
   <div class="contact-links">
     <a href="https://www.instagram.com/rakizwayay?igsh=MTBpZmlxMDh3YWRxNA%3D%3D&utm_source=qr" target="_blank">📷 تابعنا على إنستغرام</a>
     <a href="https://www.facebook.com/share/1BKhv7kbk5/?mibextid=wwXIfr" target="_blank">📘 تابعنا على فيسبوك</a>
-    <!-- البريد الإلكتروني نضيفه لاحقًا -->
   </div>
+
+  <!-- فورم التواصل -->
+  <form action="mailto:rakizwayay@gmail.com" method="post" enctype="text/plain">
+    <label>الاسم:</label>
+    <input type="text" name="name" placeholder="اكتب اسمك هنا" required>
+
+    <label>البريد الإلكتروني:</label>
+    <input type="email" name="email" placeholder="اكتب بريدك هنا" required>
+
+    <label>رسالتك:</label>
+    <textarea name="message" rows="5" placeholder="اكتب رسالتك هنا" required></textarea>
+
+    <button type="submit">📨 إرسال الرسالة</button>
+  </form>
 
   <!-- روابط التنقل -->
   <nav>
