@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ملخصات ضيوف ركز وياي</title>
+  <style>
+    body {
+      font-family: "Tahoma", sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+    }
+    nav {
+      margin: 20px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .faq {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    .faq-item {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fff;
+    }
+    .faq-question {
+      padding: 12px;
+      cursor: pointer;
+      background-color: #0066cc;
+      color: #fff;
+      border-radius: 6px 6px 0 0;
+      font-weight: bold;
+    }
+    .faq-answer {
+      display: none;
+      padding: 12px;
+      background-color: #f1f1f1;
+      border-radius: 0 0 6px 6px;
+      line-height: 1.6;
+    }
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 10px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📖 ملخصات ضيوف ركز وياي</h1>
+    <p>هنا تجد أهم الأفكار والرسائل من حلقات الضيوف</p>
+  </header>
+
+  <!-- ملخصات الضيوف -->
+  <section class="faq">
+    <div class="faq-item">
+      <div class="faq-question">🎙️ ملخص حلقة أكرم الجبوري</div>
+      <div class="faq-answer">
+        <p>في لقاء اتسم بالعفوية والعمق، استضاف بودكاست "ركز وياي" الشاعر وصانع المحتوى <strong>أكرم الجبوري</strong>، وتناولت الحلقات رحلته من عالم الشعر إلى السوشيال ميديا، ورؤيته الفلسفية للحياة والمجتمع.</p>
+        <ul>
+          <li><strong>الرسالة والمسؤولية في السوشيال ميديا:</strong> انتقد ظاهرة الاستجداء واعتبر أن المؤثر يجب أن ينفع الناس لا أن يستغلهم.</li>
+          <li><strong>البساطة كمنهج حياة:</strong> يعتمد العفوية والصدق حتى في دمج الأصوات العشوائية بمحتواه.</li>
+          <li><strong>مشاريعه الروائية:</strong> يعمل على روايتين تحملان أبعاد فلسفية واجتماعية.</li>
+          <li><strong>نظرة نقدية للمجتمع:</strong> انتقد التبعية العمياء وركز على أهمية الهوية الفردية.</li>
+          <li><strong>الحياة محطات وتجارب:</strong> وصفها بالبحر المليء بالجواهر والمخاطر، مؤكداً أن الانكسارات تصنع القوة.</li>
+          <li><strong>الشعر:</strong> يبقى أساس هويته رغم انشغاله بالمحتوى الاجتماعي.</li>
+        </ul>
+        <p><em>بودكاست ركز وياي - حيث يلتقي العمق بالعفوية.</em></p>
+      </div>
+    </div>
+
+    <!-- هنا نضيف ضيوف آخرين بنفس البنية -->
+  </section>
+
+  <!-- روابط التنقل -->
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">شتريد تعرف عن ركز وياي</a>
+    <a href="episodes.html">جميع الحلقات</a>
+    <a href="shorts.html">مقاطع البودكاست القصيرة</a>
+    <a href="contact.html">تواصل</a>
+    <a href="summaries.html">ملخصات الضيوف</a>
+  </nav>
+
+  <footer>
+    <p>© 2026 بودكاست ركز وياي | إبراهيم أبو الليش</p>
+  </footer>
+
+  <!-- Script لفتح ملخص واحد فقط -->
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+        const answer = q.nextElementSibling;
+        answer.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
