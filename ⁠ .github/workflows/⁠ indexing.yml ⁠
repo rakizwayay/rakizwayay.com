@@ -34,7 +34,7 @@ jobs:
 
           key_data = os.environ.get('GOOGLE_KEY_JSON')
           if not key_data:
-              print("خطأ: لم يتم العثور على SERVICE_ACCOUNT_JSON بداخل Secrets!")
+              print("Error: SERVICE_ACCOUNT_JSON not found")
               exit(1)
 
           info = json.loads(key_data)
@@ -54,6 +54,6 @@ jobs:
 
           for u in urls:
               res = client.urlNotifications().publish(body={'url': u, 'type': 'URL_UPDATED'}).execute()
-              print(f"تم إرسال الرابط تلقائياً: {u}")
+              print(f"Sent: {u}")
           EOF
           python run_indexing.py
