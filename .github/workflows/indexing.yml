@@ -1,0 +1,59 @@
+name: Automatic Google Indexing
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth
+
+      - name: Run Indexing Script
+        env:
+          GOOGLE_KEY_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+        run: |
+          cat << 'EOF' > run_indexing.py
+          import os
+          import json
+          from google.oauth2 import service_account
+          from googleapiclient.discovery import build
+
+          key_data = os.environ.get('GOOGLE_KEY_JSON')
+          if not key_data:
+              print("Error: SERVICE_ACCOUNT_JSON not found")
+              exit(1)
+
+          info = json.loads(key_data)
+
+          urls = [
+              'https://rakizwayay.github.io/rakizwayay.com/',
+              'https://rakizwayay.github.io/rakizwayay.com/contact.html',
+              'https://rakizwayay.github.io/rakizwayay.com/shorts.html',
+              'https://rakizwayay.github.io/rakizwayay.com/episodes.html',
+              'https://rakizwayay.github.io/rakizwayay.com/about.html',
+              'https://rakizwayay.github.io/rakizwayay.com/summaries.html'
+          ]
+
+          SCOPES = ['https://www.googleapis.com/auth/indexing']
+          creds = service_account.Credentials.from_service_account_info(info, scopes=SCOPES)
+          client = build('indexing', 'v3', credentials=creds)
+
+          for u in urls:
+              res = client.urlNotifications().publish(body={'url': u, 'type': 'URL_UPDATED'}).execute()
+              print(f"Sent: {u}")
+          EOF
+          python run_indexing.py
