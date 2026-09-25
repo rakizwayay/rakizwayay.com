@@ -355,10 +355,12 @@
 
   <script>
     function copySummary(button) {
+      // تحديد عنصر النص الخاص بالملخص المجاور للزر
       const parentContainer = button.parentElement;
       const summaryTextElement = parentContainer.querySelector('.summary-text');
       const textToCopy = summaryTextElement.innerText;
 
+      // دالة لتحديث حالة الزر
       function updateButton() {
         const originalText = button.innerHTML;
         button.innerHTML = "✅ تم نسخ الملخص";
@@ -370,6 +372,7 @@
         }, 2000);
       }
 
+      // طريقة النسخ المتوافقة مع جميع المتصفحات
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(textToCopy).then(updateButton).catch(err => {
           fallbackCopyText(textToCopy, updateButton);
@@ -379,6 +382,7 @@
       }
     }
 
+    // طريقة بديلة في حال عدم دعم الـ Clipboard API الحديثة
     function fallbackCopyText(text, callback) {
       const textArea = document.createElement("textarea");
       textArea.value = text;
